@@ -35,7 +35,7 @@ public class CheckUtil {
      * @return 是否是邮箱
      */
     public static boolean isEmail(String email) {
-        if (null == email || "".equals(email)) {
+        if (StringUtils.isBlank(email)) {
             return false;
         }
         Matcher m = MAIL_PATTERN.matcher(email);
@@ -47,7 +47,7 @@ public class CheckUtil {
      * @return 是否是手机号
      */
     public static boolean isPhone(String phone) {
-        if (null == phone || "".equals(phone)) {
+        if (StringUtils.isBlank(phone)) {
             return false;
         }
         Matcher m = PHONE_PATTERN.matcher(phone);
@@ -61,6 +61,9 @@ public class CheckUtil {
      * @return 待判断字符串是否是数字
      */
     public static boolean stringIsNumeric(String str) {
+        if (StringUtils.isBlank(str)) {
+            return false;
+        }
         Pattern pattern = Pattern.compile("[0-9]*");
         return pattern.matcher(str).matches();
     }

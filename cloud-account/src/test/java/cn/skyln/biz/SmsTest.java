@@ -25,7 +25,7 @@ public class SmsTest {
     @Test
     public void sentSmsTest() {
         String code = RandomUtil.randomNumbers(6);
-        smsComponent.sendSMSCode(SMSEnum.SMS_REGISTRATION_CODE_TEMPLATE_ID, "13145216441", code);
+        smsComponent.sendSMSCode(SMSEnum.REGISTRATION, "13145216441", code);
         System.out.println(code);
     }
 }
